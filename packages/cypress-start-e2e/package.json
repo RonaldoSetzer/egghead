@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "devDependencies": {
+    "cypress": "^4.11.0",
     "react-scripts": "^3.0.1"
   },
   "dependencies": {
@@ -15,10 +16,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "e2e": "yarn cypress open",
     "eject": "react-scripts eject"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
