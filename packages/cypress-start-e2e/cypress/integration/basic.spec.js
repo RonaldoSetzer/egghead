@@ -1,5 +1,6 @@
-describe('Example test', () => {
-  it('actually works', () => {
-    expect(true).be.equal(true);
+describe('Emoji Search app', () => {
+  it('successfylly renders the page header', () => {
+    cy.visit('/');
+    cy.contains('Emoji Search');
   });
 });
