@@ -1,0 +1,12 @@
+{
+  "name": "egghead",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": "true",
+  "workspaces": {
+    "packages": ["packages/*"]
+  },
+  "repository": "git@github.com:RonaldoSetzer/egghead.git",
+  "author": "Ronaldo Santiago <ronaldo.setzer@gmail.com>",
+  "license": "MIT"
+}
