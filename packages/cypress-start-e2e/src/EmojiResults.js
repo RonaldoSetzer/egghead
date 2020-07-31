@@ -1,17 +1,26 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import Clipboard from "clipboard";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Clipboard from 'clipboard';
 
-import EmojiResultRow from "./EmojiResultRow";
-import "./EmojiResults.css";
+import EmojiResultRow from './EmojiResultRow';
+import './EmojiResults.css';
+
+const EmojiNotFound = () => {
+  return (
+    <div className="emoji-not-found">
+      <h1>Emoji not found</h1>
+      <p>Try searching for something else</p>
+    </div>
+  );
+};
 
 export default class EmojiResults extends PureComponent {
   static propTypes = {
-    emojiData: PropTypes.array
+    emojiData: PropTypes.array,
   };
 
   componentDidMount() {
-    this.clipboard = new Clipboard(".copy-to-clipboard");
+    this.clipboard = new Clipboard('.copy-to-clipboard');
   }
 
   componentWillUnmount() {
@@ -19,15 +28,20 @@ export default class EmojiResults extends PureComponent {
   }
 
   render() {
+    const { emojiData } = this.props;
     return (
       <div className="component-emoji-results">
-        {this.props.emojiData.map(emojiData => (
-          <EmojiResultRow
-            key={emojiData.title}
-            symbol={emojiData.symbol}
-            title={emojiData.title}
-          />
-        ))}
+        {emojiData.length > 0 ? (
+          emojiData.map(emojiData => (
+            <EmojiResultRow
+              key={emojiData.title}
+              symbol={emojiData.symbol}
+              title={emojiData.title}
+            />
+          ))
+        ) : (
+          <EmojiNotFound />
+        )}
       </div>
     );
   }
