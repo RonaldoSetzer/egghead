@@ -1,11 +1,11 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-import "./SearchInput.css";
+import './SearchInput.css';
 
 export default class SearchInput extends PureComponent {
   static propTypes = {
-    textChange: PropTypes.func
+    textChange: PropTypes.func,
   };
 
   handleChange = event => {
@@ -16,7 +16,7 @@ export default class SearchInput extends PureComponent {
     return (
       <div className="component-search-input">
         <div>
-          <input onChange={this.handleChange} />
+          <input data-cy="emoji-search-input" onChange={this.handleChange} />
         </div>
       </div>
     );
